@@ -44,7 +44,7 @@ public static function getInstance() {
 }
 
  **/
-   observação: adicionando esse dois métodos, apartir de agora crie sua lógica acessando o banco de dados
+   observação: adicionando esses dois métodos, apartir de agora crie sua lógica acessando o banco de dados
  /**
 
 }
