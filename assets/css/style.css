@@ -1,0 +1,28 @@
+body {
+  font-family: "Lobster", cursive;
+  background: #f8f8f8;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+section > div {
+  margin-top: -140px;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h6 {
+  font-size: 25px;
+}
+
+section h1,
+h6 {
+  color: #610618;
+}
