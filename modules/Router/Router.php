@@ -17,20 +17,18 @@ class Router {
 
 	public function load() {
 		$this->core = Core::getInstance();
-		$this->loadRouteFile('defaultController');
+		$this->loadRouteFile('default');
 		return $this;
 	}
 
 	public function loadRouteFile($f) {
-		if(file_exists('controllers/'.$f.'.php')) {
-			require 'controllers/'.$f.'.php';
+		if(file_exists('routes/'.$f.'.php')) {
+			require 'routes/'.$f.'.php';
 		}
 	}
 
 	public function match() {
 		$url = ((isset($_GET['url']))?$_GET['url']:'');
-		// se não existir uma rota
-		$isTrueRoute = false;
 
 		switch($_SERVER['REQUEST_METHOD']) {
 			case 'GET':
@@ -63,17 +61,11 @@ class Router {
 				foreach($matches as $key => $match) {
 					$arg[$itens[$key]] = $match;
 				}
-        //passa argumentos para a rota  
-				$func($arg);
-				//a rota existe
-				$isTrueRoute = true;
-				break;
-      }
-		}
 
-		//se não existe 
-		if(!$isTrueRoute) {
-			$this->get['404'](null);
+				$func($arg);
+				break;
+
+			}
 		}
 
 
