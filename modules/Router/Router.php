@@ -29,6 +29,8 @@ class Router {
 
 	public function match() {
 		$url = ((isset($_GET['url']))?$_GET['url']:'');
+		// se não exsitir uma rota			
+		// $isTrueRoute = false;
 
 		switch($_SERVER['REQUEST_METHOD']) {
 			case 'GET':
@@ -67,6 +69,10 @@ class Router {
 
 			}
 		}
+
+		// if(!$isTrueRoute) {	
+		// 	$this->get['404'](null);				
+		// }
 
 
 	}

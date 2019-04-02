@@ -1,6 +1,15 @@
 <?php
 $this->get('', function($arg){
-	echo 'home';
+	$tpl = $this->core->loadModule('template');
+	$data = array();
+	$data['title'] = 'Faster Mini Framework';
+	$data['subTitle'] = 'Uma forma simples de construir suas aplicações em php...';
+	$tpl->render('teste', $data);
 });
 
-$this->loadRouteFile('noticias');
+// $this->get('404', function($arg){
+// 	$tpl = $this->core->loadModule('template');
+// 	$tpl->render('404');
+// });
+
+$this->loadRouteFile('teste');
