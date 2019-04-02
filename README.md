@@ -6,7 +6,7 @@
   - css
   - images
   - js
-- controllers
+- routes
 - modules
   - Core
   - Database
